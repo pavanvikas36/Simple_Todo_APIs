@@ -2,6 +2,7 @@ const {TodoModel} = require("../models/todoSchema.js")
 
 const getAllTodo = async(req, res) => {
     try {
+        console.log(req.origin)
         const todosData = await TodoModel.find()
         res.status(200).json({message:"Todos", data:todosData})
     } catch (error) {

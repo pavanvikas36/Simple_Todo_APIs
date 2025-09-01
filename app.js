@@ -2,12 +2,18 @@ const express = require("express")
 const app = express()
 const todoRouter = require("./routes/todoRouter.js")
 const {connectDB} = require("./config/db.js")
+const cors = require("cors");
 
 connectDB();
 
 //middlewares
 app.use(express.json()) //raw nunchi data tachukodaniki
 app.use(express.urlencoded())
+
+//cors middleware
+app.use(cors({
+    origin: "http://localhost:5173"
+}));
 
 //Creating APIs (Router Middleware)
 app.get("/", (req, res) => {
