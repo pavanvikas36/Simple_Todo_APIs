@@ -12,7 +12,7 @@ app.use(express.urlencoded())
 
 //cors middleware
 app.use(cors({
-    origin: ["http://localhost:5173", "https://simpletodoapis.onrender.com/api/todos/getAllTodos"]
+    origin: ["http://localhost:5173", "https://simple-todo-react-ten.vercel.app"]
 }));
 
 //Creating APIs (Router Middleware)
